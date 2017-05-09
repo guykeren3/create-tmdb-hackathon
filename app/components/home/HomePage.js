@@ -14,6 +14,8 @@ class HomePage extends React.Component {
   handleSearch(event) {
     event.preventDefault();
     let mySearch = this.search.value;
+    console.info(mySearch);
+    this.props.setInto(mySearch);
     this.props.history.push(`/movies/${mySearch}?search=true`);
   }
 
@@ -52,9 +54,9 @@ function mapStateToProps({movies}) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    setMovies(data) {
+    setInto(data) {
       dispatch({
-        type: 'SET_MOVIES',
+        type: 'SET_INTO',
         data: data
       });
     }
