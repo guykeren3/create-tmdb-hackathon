@@ -1,9 +1,11 @@
 import { createStore, combineReducers } from 'redux';
 
 import movies from './reducers/movies';
+import uInto from  './reducers/uInto'
 
 const reducer = combineReducers({
-  movies
+  movies,
+  uInto
 });
 
 const store = createStore(
