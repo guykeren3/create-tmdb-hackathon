@@ -24,19 +24,19 @@ class HomePage extends React.Component {
       <div className="home-page home-page-wrapper">
         <div>
           <NavLink to="/" className="logo-home-page-anchor">
-            <i className="fa fa-film scale-home-page-logo" aria-hidden="true"></i>
-            <h2>Into.</h2>
+            <img src="../../assets/styles/images/popcorn.png" alt="popcorn" className="fa fa-film scale-home-page-logo"/>
+            <h1>Into.</h1>
           </NavLink>
         </div>
         <div className="home-page-form-wrapper">
           <form className="home-page-form" onSubmit={this.handleSearch}>
-            <h3 className="home-page-title"> Tell us what you're interested in, we'll tell you what to watch </h3>
+            <h3 className="home-page-title"> tell us what you're interested in, we'll tell you what to watch </h3>
             <div className="search-container">
               <button className="home-page-search-icon"><i className="fa fa-search" aria-hidden="true"/></button>
 
-              <input type="text" placeholder="Math, India, Politics" className="search-box-home"
+              <input type="text" placeholder="Graphic design, Classical music etc" className="search-box-home"
                      ref={(searchValue) => this.search = searchValue}/>
-              <span className="im-into">I'm into</span>
+              <span className="im-into">I'm into.</span>
             </div>
           </form>
         </div>

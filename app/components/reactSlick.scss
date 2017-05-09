@@ -1,0 +1,10 @@
+@import '../assets/styles/colors';
+
+.slick-container {
+  display: flex;
+  justify-content: center;
+}
+
+.slick-container > div {
+  width: 33.3%
+}
