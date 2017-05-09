@@ -30,10 +30,11 @@
   }
 }
 
-.home-page .search-box-home {
+.home-page .search-box-home.search-box-home {
   border: 1px solid lightgrey;
   border-radius: 10px;
-  padding: 5px;
+  padding: 10px 5px 10px 140px;
+  color: white;
 }
 
 .search-container {
@@ -46,8 +47,8 @@
 .home-page-search-icon {
   font-size: 2rem;
   position: absolute;
-  bottom: 33px;
-  right: 20px;
+  bottom: 28px;
+  right: 15px;
   z-index: 10; //if not defined hides behind input
   border: none;
   background: none;
@@ -92,7 +93,7 @@
 .im-into {
   color: white;
   position: absolute;
-  top: 8px;
+  top: 3px;
   left: 20px;
   font-size: 1.8rem;
   font-family: 'Montserrat', sans-serif;
@@ -104,6 +105,7 @@
     weight: 300;
     family: 'Montserrat', sans-serif;
   }
+  padding-top: 20px;
   color: white;
   text-align: center;
   //padding-right: 290px; //here for signin / out title location
@@ -112,7 +114,7 @@
 
 input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
   color: white;
-  padding-left: 130px;
+  padding-left: 0;
   font-size: 0.7rem;
   font-weight: 300;
   font-family: 'Montserrat', sans-serif;
