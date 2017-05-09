@@ -19,6 +19,7 @@
   align-items: center;
   text-decoration: none;
   color: black;
+
   & h2 { // child of the logo-sign-anchor
     position: absolute;
     left: 30px;
@@ -67,8 +68,10 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  font-family: 'Montserrat', sans-serif;
   & label {
     color: black;
+    font-family: 'Montserrat', sans-serif;
   }
   & input {
     position: relative;
@@ -78,6 +81,7 @@
     font-size: 1.2rem;
     width: 100%; //handles input line length
     background-color: #EC265A;
+    font-family: 'Montserrat', sans-serif;
 
     &:focus {
       outline: none;
@@ -88,13 +92,17 @@
 .im-into {
   color: white;
   position: absolute;
-  left: 0;
+  top: 10px;
+  left: 20px;
+  font-size: 1.8rem;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .home-page-title {
   font: {
     size: 1.5rem;
     weight: 300;
+    family: 'Montserrat', sans-serif;
   }
   color: white;
   text-align: center;
@@ -102,37 +110,13 @@
   margin-top: 20px;
 }
 
-.home-page .create-account-title {
-  font: {
-    size: 1.5rem;
-    weight: bold;
-  }
-  //padding-right: 200px; //here for signin / out title location
-  margin-top: 20px;
-}
-
-.home-page .handle-btn-location-sign { //had problems centering sign btn, solved with the div flex.
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
   color: white;
-  padding-left: 100px;
-}
-
-.im-into {
-  position: absolute;
-  top: 17px;
-  left: 20px;
-font-size: 1.8rem;
-}
-
-.home-page a.sign-anchor-if-got-account {
-  text-decoration: none;
-  margin-left: 10px;
-  color: black;
+  padding-top: 10px;
+  padding-left: 130px;
+  font-size: 0.7rem;
+  font-weight: 300;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .scale-home-page-logo {

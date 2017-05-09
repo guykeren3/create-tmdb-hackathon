@@ -22,7 +22,7 @@ class HomePage extends React.Component {
       <div className="home-page home-page-wrapper">
         <div>
           <NavLink to="/" className="logo-home-page-anchor">
-            <i className="fa fa-film scale-home-page-logo" aria-hidden="true"></i>
+            <img src="../../assets/styles/images/popcorn.png" alt="popcorn" className="fa fa-film scale-home-page-logo"/>
             <h2>Into.</h2>
           </NavLink>
         </div>
@@ -32,9 +32,9 @@ class HomePage extends React.Component {
             <div className="search-container">
               <button className="home-page-search-icon"><i className="fa fa-search" aria-hidden="true"/></button>
 
-              <input type="text" placeholder="Math, India, Politics" className="search-box-home"
+              <input type="text" placeholder="Graphic design, Classical music etc" className="search-box-home"
                      ref={(searchValue) => this.search = searchValue}/>
-              <span className="im-into">I'm into</span>
+              <span className="im-into">I'm into.</span>
             </div>
           </form>
         </div>
