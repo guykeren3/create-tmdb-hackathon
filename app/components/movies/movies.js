@@ -22,15 +22,17 @@ class Movies extends React.Component {
       loading: true
     });
 
-    TMDB.get('/discover/movie?sort_by=popularity.desc')
-      .then((data) => {
+    TMDB.get(`/search/keyword?query=cat`)
+      .then((keywordList) => {
         // log `data` here to inspect the fetched data
-        console.info(data);
-        this.setState({
-          loading: false
+        console.info(keywordList);
+        const keywordIds = keywordList.results.map(keyword => keyword.id).join('|')
+        TMDB.get(`/discover/movie?with_keywords=${keywordIds}`).then(movies => {
+          this.props.setMovies(movies.results);
+          this.setState({
+            loading: false
+          });
         });
-
-        this.props.setMovies(data.results);
       });
   }
 
