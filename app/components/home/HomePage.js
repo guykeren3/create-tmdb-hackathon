@@ -13,7 +13,8 @@ export default class Home extends React.Component {
   handleSearch(event) {
     event.preventDefault();
     let mySearch = this.search.value;
-    this.props.history.push(`/explore/${mySearch}?search=true`);
+    console.info(mySearch);
+    // this.props.history.push(`/explore/${mySearch}?search=true`);
   }
 
   render() {
