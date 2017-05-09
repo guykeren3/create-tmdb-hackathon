@@ -23,12 +23,12 @@ class HomePage extends React.Component {
         <div>
           <NavLink to="/" className="logo-home-page-anchor">
             <img src="../../assets/styles/images/popcorn.png" alt="popcorn" className="fa fa-film scale-home-page-logo"/>
-            <h2>Into.</h2>
+            <h1>Into.</h1>
           </NavLink>
         </div>
         <div className="home-page-form-wrapper">
           <form className="home-page-form" onSubmit={this.handleSearch}>
-            <h3 className="home-page-title"> Tell us what you're interested in, we'll tell you what to watch </h3>
+            <h3 className="home-page-title"> tell us what you're interested in, we'll tell you what to watch </h3>
             <div className="search-container">
               <button className="home-page-search-icon"><i className="fa fa-search" aria-hidden="true"/></button>
 

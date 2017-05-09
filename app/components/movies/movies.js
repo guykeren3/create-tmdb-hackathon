@@ -5,6 +5,8 @@ import { connect } from 'react-redux';
 import TMDB from '../../core/tmdb';
 import Topbar from "../topbar/Topbar";
 
+import ReactSlick from "../reactSlick";
+
 class Movies extends React.Component {
 
   constructor() {
@@ -55,6 +57,9 @@ class Movies extends React.Component {
 
         <h2>Most Popular Movies</h2>
         { this.renderMoviesList() }
+
+        <ReactSlick/>
+
       </div>
     );
   }

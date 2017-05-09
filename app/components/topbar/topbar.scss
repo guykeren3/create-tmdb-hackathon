@@ -7,18 +7,18 @@ $fixed-bar-layer-10: 10;
   position: fixed;
   top: 0;
   left: 0;
-  background-color: black;
+  background-color: #EC265A;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  max-height: 50px;
+  max-height: 100px;
   padding: 0;
   //height: 50px;
   & h1 {
-    font-size: 1.2rem;
     margin-left: 15px;
+    font-weight: 400;
   }
 }
 
@@ -66,47 +66,53 @@ $fixed-bar-layer-10: 10;
 
 // right side topbar
 
-.top-bar-right-wrapper {
+.top-bar-search-wrapper {
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-direction: row;
   text-decoration: none;
   color: white;
-  position: relative; //for icon position in input
-  padding-right: 1%;
+  position: absolute; //for icon position in input
+  top: 30px;
+  left: 100px;
   & > input {
     font: {
       family: Roboto-Light, sans-serif;
       size: 0.9rem;
     }
-    border: 1px solid white;
-    border-radius: 10px;
+    border: none;
+    background-color: #EC265A;
+    border-bottom: 1px solid white;
     height: 20px;
     width: 250px;
     margin: 0 5px 0 0;
     color: white;
     position: relative; // for icon of search
-    background-color: darkslategrey;
     padding-left: 20px; //effects the location of the text inside!
   }
   & > button > i {
     font-size: 0.8rem;
     color: white;
     position: absolute;
-    top: 5px;
-    left: 18px;
+    top: 3px;
+    right: 8px;
     z-index: $fixed-bar-layer-10; //if not defined hides behind input
   }
   & > button {
     font-family: Roboto-Light, sans-serif;
     border: none;
-    background-color: black;
+    background-color: #EC265A;
     color: white;
     cursor: pointer;
   }
 }
 
-.search-box::-webkit-input-placeholder { // catches the placeholder
+.search-box {
+  border: none;
+}
+
+.search-box-in-topbar::-webkit-input-placeholder { // catches the placeholder
   color: white;
+  background-color: #EC265A;
 }
