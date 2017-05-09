@@ -56,7 +56,7 @@ class Movies extends React.Component {
   }
 
   renderMoviesList() {
-    return <ul>
+    return <ul className="list-of-movies">
       { this.props.movies.map((movie) => {
         return <li key={ movie.id } className="movie-card"
         onClick={()=>{this.getTrailer(movie.id)}}>
@@ -67,19 +67,22 @@ class Movies extends React.Component {
     </ul>
   }
 
+  handleBlur() {
+    this.setState({ytKey:''})
+  }
+
   render() {
     const url = `https://www.youtube.com/embed/${this.state.ytKey}?rel=0&amp;controls=0&amp;showinfo=0?ecver=1`;
 
-    return (<div className="movies">
-        <Topbar/>
+    return (<div className="movies" onClick={()=>this.handleBlur()}>
+        <Topbar />
 
-        <h2>Most Popular Movies</h2>
+
         { this.renderMoviesList() }
 
-        <ReactSlick/>
 
-        <iframe src={url} className="trailer"
-        />
+        { !!this.state.ytKey && <iframe src={url} className="trailer"
+        /> }
       </div>
     );
   }

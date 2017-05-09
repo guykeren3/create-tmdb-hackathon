@@ -2,8 +2,14 @@
 
 .movies {
 
+.list-of-movies {
+  margin-top: 110px ;
+  display: flex;
+  max-height: 500px;
+}
 
 .trailer {
+  //display: none;
   position: fixed;
   top: 100px;
   left: 50px;
@@ -18,8 +24,12 @@
   }
 
   .movie-card {
+    max-height: 450px;
     padding: 40px;
     margin: 20px;
     list-style: none;
+    img {
+      height: 100%;
+    }
   }
 }
