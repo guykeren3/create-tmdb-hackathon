@@ -1,13 +1,18 @@
 @import '../../assets/styles/colors';
 
-.home-page.sign-wrapper {
+.home-page {
+  background-color: #EC265A;
+  height: 100vh;
+}
+
+.home-page.home-page-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
 
-.home-page .logo-sign-anchor {
+.home-page .logo-home-page-anchor {
   margin-top: 30px;
   display: flex; // arranging logo and title in sign papges
   flex-direction: column;
@@ -15,15 +20,13 @@
   text-decoration: none;
   color: black;
   & h2 { // child of the logo-sign-anchor
+    position: absolute;
+    left: 30px;
+    top: 0;
     font-size: 2rem;
     margin-bottom: 0;
-    color: black;
+    color: white;
   }
-}
-
-.logo-sign-anchor .scale-sign-logo {
-  color: black;
-  font-size: 0.8rem;
 }
 
 .home-page .search-box-home {
@@ -34,20 +37,24 @@
 
 .search-container {
   position: relative;
+  display: flex;
+  justify-content: center;
+  width: 60%;
 }
 
 .home-page-search-icon {
-  font-size: 1.2rem;
+  font-size: 2rem;
   position: absolute;
-  top: 5px;
-  right: 0;
+  bottom: 33px;
+  right: 20px;
   z-index: 10; //if not defined hides behind input
   border: none;
   background: none;
   cursor: pointer;
+  color: white;
 }
 
-.home-page .sign-form-wrapper {
+.home-page .home-page-form-wrapper {
   margin-top: 20px;
   width: 80%; //effects the width of the form and the position
   display: flex;
@@ -55,28 +62,41 @@
   flex-direction: column;
 }
 
-.home-page .sign-form {
-  width: 50%; //effects the width of the form and the position as well
+.home-page .home-page-form {
+  width: 100%; //effects the width of the form and the position as well
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   & label {
     color: black;
   }
   & input {
     position: relative;
     margin-bottom: 25px;
+    padding: 15px;
+    border-radius: 50px;
     font-size: 1.2rem;
-
     width: 100%; //handles input line length
+    background-color: #EC265A;
+
     &:focus {
       outline: none;
     }
   }
 }
 
-.signin-title {
+.im-into {
+  color: white;
+  position: absolute;
+  left: 0;
+}
+
+.home-page-title {
   font: {
     size: 1.5rem;
-    weight: bold;
+    weight: 300;
   }
+  color: white;
   text-align: center;
   //padding-right: 290px; //here for signin / out title location
   margin-top: 20px;
@@ -97,26 +117,24 @@
   align-items: center;
 }
 
-.home-page .sign-btn {
-  align-items: center;
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
   color: white;
-  background-color: black;
-  border: none;
-  font-weight: bold;
-  width: 100px;
-  height: 30px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  text-align: center;
-  text-transform: uppercase;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16), 0 2px 10px 0 rgba(0, 0, 0, .12);
-  cursor: pointer;
-  background-size: 0;
-  font-family: Roboto, sans-serif;
+  padding-left: 100px;
+}
+
+.im-into {
+  position: absolute;
+  top: 17px;
+  left: 20px;
+font-size: 1.8rem;
 }
 
 .home-page a.sign-anchor-if-got-account {
   text-decoration: none;
   margin-left: 10px;
   color: black;
+}
+
+.scale-home-page-logo {
+  font-size: 2rem;
 }

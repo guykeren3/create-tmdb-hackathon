@@ -14,12 +14,15 @@ import { Provider } from 'react-redux';
 
 import Root from './components/root/root';
 import store from './store';
+import HomePage from "./components/home/HomePage";
+import movies from "./components/movies/movies";
 
 render(
   <Provider store={ store }>
     <BrowserRouter>
       <Switch>
-        <Route exact path="/" component={ Root } />
+        <Route exact path="/" component={ HomePage } />
+        <Route path="/movies" component={ movies } />
       </Switch>
     </BrowserRouter>
   </Provider>,

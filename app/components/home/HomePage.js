@@ -3,8 +3,9 @@ import './homePage.scss'
 
 import React from 'react';
 import {NavLink} from "react-router-dom";
+import {connect} from "react-redux";
 
-export default class Home extends React.Component {
+class HomePage extends React.Component {
   constructor() {
     super();
     this.handleSearch = this.handleSearch.bind(this);
@@ -13,30 +14,51 @@ export default class Home extends React.Component {
   handleSearch(event) {
     event.preventDefault();
     let mySearch = this.search.value;
-    console.info(mySearch);
-    // this.props.history.push(`/explore/${mySearch}?search=true`);
+    this.props.history.push(`/movies/${mySearch}?search=true`);
   }
 
   render() {
     return (
-      <div className="home-page sign-wrapper">
+      <div className="home-page home-page-wrapper">
         <div>
-          <NavLink to="/" className="logo-sign-anchor">
-            <i className="fa fa-film scale-sign-logo" aria-hidden="true"></i>
-            <h2>Into</h2>
+          <NavLink to="/" className="logo-home-page-anchor">
+            <i className="fa fa-film scale-home-page-logo" aria-hidden="true"></i>
+            <h2>Into.</h2>
           </NavLink>
         </div>
-        <div className="sign-form-wrapper">
-          <form className="sign-form" onSubmit={this.handleSearch}>
-            <h3 className="signin-title">What are you into?</h3>
+        <div className="home-page-form-wrapper">
+          <form className="home-page-form" onSubmit={this.handleSearch}>
+            <h3 className="home-page-title"> Tell us what you're interested in, we'll tell you what to watch </h3>
             <div className="search-container">
               <button className="home-page-search-icon"><i className="fa fa-search" aria-hidden="true"/></button>
+
+              <input type="text" placeholder="Math, India, Politics" className="search-box-home"
+                     ref={(searchValue) => this.search = searchValue}/>
+              <span className="im-into">I'm into</span>
             </div>
-            <input type="text" placeholder="Math, India, Politics" className="search-box-home"
-                   ref={(searchValue) => this.search = searchValue}/>
           </form>
         </div>
       </div>
     )
   }
 }
+
+function mapStateToProps({movies}) {
+  return {
+    movies: movies
+  };
+}
+
+
+function mapDispatchToProps(dispatch) {
+  return {
+    setMovies(data) {
+      dispatch({
+        type: 'SET_MOVIES',
+        data: data
+      });
+    }
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(HomePage);

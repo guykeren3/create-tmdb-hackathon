@@ -27,7 +27,7 @@ class Root extends React.Component {
       loading: true
     });
 
-    TMDB.get('/movie/52622/videos?api_key=<<api_key>>&language=en-US')
+    TMDB.get('/search/movie?language=en-US&query=western&page=3&include_adult=false')
       .then((data) => {
         // log `data` here to inspect the fetched data
         console.info(data);
@@ -46,6 +46,7 @@ class Root extends React.Component {
   render() {
     return (
       <div className="root">
+
         <SimpleSlider/>
         {/*<Movies />*/}
 
@@ -64,6 +65,7 @@ class Root extends React.Component {
         {/*{ this.state.loading && 'Loading...' }*/}
 
         <Movies />
+
       </div>
     );
   }

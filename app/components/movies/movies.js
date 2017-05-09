@@ -3,6 +3,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import TMDB from '../../core/tmdb';
+import Topbar from "../topbar/Topbar";
 
 class Movies extends React.Component {
 
@@ -21,7 +22,7 @@ class Movies extends React.Component {
       loading: true
     });
 
-    TMDB.get('/discover/movie?sort_by=popularity.desc')
+    TMDB.get('/search/movie?language=en-US&query=western&page=3&include_adult=false')
       .then((data) => {
         // log `data` here to inspect the fetched data
         console.info(data);
@@ -48,7 +49,8 @@ class Movies extends React.Component {
 
   render() {
     return (<div className="movies">
-you are into {this.props.uInto}
+        <Topbar/>
+
         <h2>Most Popular Movies</h2>
         { this.renderMoviesList() }
       </div>
