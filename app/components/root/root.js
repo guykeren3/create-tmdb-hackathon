@@ -6,6 +6,9 @@ import SimpleSlider from '../carousel'
 import Movies from '../movies/movies';
 import TMDB from '../../core/tmdb';
 
+import Topbar from '../topbar/Topbar'
+import HomePage from "../home/HomePage";
+
 class Root extends React.Component {
 
   constructor() {
@@ -24,7 +27,7 @@ class Root extends React.Component {
       loading: true
     });
 
-    TMDB.get('/discover/movie?sort_by=popularity.desc')
+    TMDB.get('/movie/52622/videos?api_key=<<api_key>>&language=en-US')
       .then((data) => {
         // log `data` here to inspect the fetched data
         console.info(data);
@@ -45,6 +48,22 @@ class Root extends React.Component {
       <div className="root">
         <SimpleSlider/>
         {/*<Movies />*/}
+
+        <Topbar />
+
+        <HomePage />
+
+        {/*<h1 className="root-heading"*/}
+            {/*onClick={ this.handleClick }>*/}
+          {/*TMDB Hackathon!*/}
+        {/*</h1>*/}
+
+        {/*<p>Click the heading to see some action!</p>*/}
+        {/*<p>Fetched movies: { this.props.movies.length }</p>*/}
+
+        {/*{ this.state.loading && 'Loading...' }*/}
+
+        <Movies />
       </div>
     );
   }
