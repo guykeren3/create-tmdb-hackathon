@@ -17,13 +17,10 @@ class Topbar extends React.Component {
         <div className="top-bar-left-wrapper">
           <NavLink to="/" className="logo-homepage-anchor">
             <i className="fa fa-mixcloud scale-topbar" aria-hidden="true"/>
-            <h1>Into</h1>
+            <h1>you are into {this.props.uInto}</h1>
           </NavLink>
           <nav className="nav-bar">
-            {/*<ul>*/}
-              {/*<li><NavLink to="/explore" className="nav-links">Explore</NavLink></li>*/}
-              {/*<li><NavLink to="/playlists" className="nav-links">Playlists</NavLink></li>*/}
-            {/*</ul>*/}
+
           </nav>
         </div>
           <button type="button"> Wishlist </button>

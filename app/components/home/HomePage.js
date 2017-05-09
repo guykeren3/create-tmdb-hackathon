@@ -3,8 +3,9 @@ import './homePage.scss'
 
 import React from 'react';
 import {NavLink} from "react-router-dom";
+import {connect} from "react-redux";
 
-export default class Home extends React.Component {
+class Home extends React.Component {
   constructor() {
     super();
     this.handleSearch = this.handleSearch.bind(this);
@@ -13,7 +14,7 @@ export default class Home extends React.Component {
   handleSearch(event) {
     event.preventDefault();
     let mySearch = this.search.value;
-    this.props.history.push(`/explore/${mySearch}?search=true`);
+    this.props.history.push(`/movies/${mySearch}?search=true`);
   }
 
   render() {
@@ -39,3 +40,23 @@ export default class Home extends React.Component {
     )
   }
 }
+
+function mapStateToProps({ movies }) {
+  return {
+    movies: movies
+  };
+}
+
+
+function mapDispatchToProps(dispatch) {
+  return {
+    setMovies(data) {
+      dispatch({
+        type: 'SET_MOVIES',
+        data: data
+      });
+    }
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);
