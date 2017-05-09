@@ -2,6 +2,8 @@ import 'cssrecipes-defaults/lib/document-remove-margin-padding.css';
 import 'cssrecipes-defaults/lib/box-sizing.css';
 import 'cssrecipes-defaults/lib/hidden.css';
 import 'normalize.css/normalize.css';
+import 'roboto-fontface/css/roboto/roboto-fontface.css';
+import 'font-awesome/css/font-awesome.css';
 
 import './assets/styles/main.scss';
 

@@ -1,0 +1,122 @@
+@import '../../assets/styles/colors';
+
+.home-page.sign-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.home-page .logo-sign-anchor {
+  margin-top: 30px;
+  display: flex; // arranging logo and title in sign papges
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: black;
+  & h2 { // child of the logo-sign-anchor
+    font-size: 2rem;
+    margin-bottom: 0;
+    color: black;
+  }
+}
+
+.logo-sign-anchor .scale-sign-logo {
+  color: black;
+  font-size: 0.8rem;
+}
+
+.home-page .search-box-home {
+  border: 1px solid lightgrey;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.search-container {
+  position: relative;
+}
+
+.home-page-search-icon {
+  font-size: 1.2rem;
+  position: absolute;
+  top: 5px;
+  right: 0;
+  z-index: 10; //if not defined hides behind input
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.home-page .sign-form-wrapper {
+  margin-top: 20px;
+  width: 80%; //effects the width of the form and the position
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.home-page .sign-form {
+  width: 50%; //effects the width of the form and the position as well
+  & label {
+    color: black;
+  }
+  & input {
+    position: relative;
+    margin-bottom: 25px;
+    font-size: 1.2rem;
+
+    width: 100%; //handles input line length
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.signin-title {
+  font: {
+    size: 1.5rem;
+    weight: bold;
+  }
+  text-align: center;
+  //padding-right: 290px; //here for signin / out title location
+  margin-top: 20px;
+}
+
+.home-page .create-account-title {
+  font: {
+    size: 1.5rem;
+    weight: bold;
+  }
+  //padding-right: 200px; //here for signin / out title location
+  margin-top: 20px;
+}
+
+.home-page .handle-btn-location-sign { //had problems centering sign btn, solved with the div flex.
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-page .sign-btn {
+  align-items: center;
+  color: white;
+  background-color: black;
+  border: none;
+  font-weight: bold;
+  width: 100px;
+  height: 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16), 0 2px 10px 0 rgba(0, 0, 0, .12);
+  cursor: pointer;
+  background-size: 0;
+  font-family: Roboto, sans-serif;
+}
+
+.home-page a.sign-anchor-if-got-account {
+  text-decoration: none;
+  margin-left: 10px;
+  color: black;
+}

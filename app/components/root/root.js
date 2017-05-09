@@ -1,17 +1,20 @@
 import './root.scss';
 
 import React from 'react';
-import { connect } from 'react-redux';
+import {connect} from 'react-redux';
 
 import Movies from '../movies/movies';
 import TMDB from '../../core/tmdb';
+
+import Topbar from '../topbar/Topbar'
+import HomePage from "../home/HomePage";
 
 class Root extends React.Component {
 
   constructor() {
     super();
 
-    this.handleClick          = this.handleClick.bind(this);
+    this.handleClick = this.handleClick.bind(this);
     this.getMostPopularMovies = this.getMostPopularMovies.bind(this);
 
     this.state = {
@@ -24,10 +27,9 @@ class Root extends React.Component {
       loading: true
     });
 
-    TMDB.get('/discover/movie?sort_by=popularity.desc')
+    TMDB.get('/movie/52622/videos?api_key=<<api_key>>&language=en-US')
       .then((data) => {
-        // log `data` here to inspect the fetched data
-
+        console.info(data);
         this.setState({
           loading: false
         });
@@ -43,15 +45,20 @@ class Root extends React.Component {
   render() {
     return (
       <div className="root">
-        <h1 className="root-heading"
-            onClick={ this.handleClick }>
-          TMDB Hackathon!
-        </h1>
 
-        <p>Click the heading to see some action!</p>
-        <p>Fetched movies: { this.props.movies.length }</p>
+        <Topbar />
 
-        { this.state.loading && 'Loading...' }
+        <HomePage />
+
+        {/*<h1 className="root-heading"*/}
+            {/*onClick={ this.handleClick }>*/}
+          {/*TMDB Hackathon!*/}
+        {/*</h1>*/}
+
+        {/*<p>Click the heading to see some action!</p>*/}
+        {/*<p>Fetched movies: { this.props.movies.length }</p>*/}
+
+        {/*{ this.state.loading && 'Loading...' }*/}
 
         <Movies />
       </div>
@@ -59,7 +66,7 @@ class Root extends React.Component {
   }
 }
 
-function mapStateToProps({ movies }) {
+function mapStateToProps({movies}) {
   return {
     movies: movies
   };
