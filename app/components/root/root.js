@@ -2,11 +2,7 @@ import './root.scss';
 
 import React from 'react';
 import {connect} from 'react-redux';
-<<<<<<< HEAD
-import SimpleSlider from '../carousel'
-=======
 
->>>>>>> 9fb063961ca39c54d2707b2711395dbd5a3b0258
 import Movies from '../movies/movies';
 import TMDB from '../../core/tmdb';
 
@@ -33,10 +29,6 @@ class Root extends React.Component {
 
     TMDB.get('/movie/52622/videos?api_key=<<api_key>>&language=en-US')
       .then((data) => {
-<<<<<<< HEAD
-        // log `data` here to inspect the fetched data
-=======
->>>>>>> 9fb063961ca39c54d2707b2711395dbd5a3b0258
         console.info(data);
         this.setState({
           loading: false
@@ -53,10 +45,6 @@ class Root extends React.Component {
   render() {
     return (
       <div className="root">
-<<<<<<< HEAD
-        <SimpleSlider/>
-        {/*<Movies />*/}
-=======
 
         <Topbar />
 
@@ -73,7 +61,6 @@ class Root extends React.Component {
         {/*{ this.state.loading && 'Loading...' }*/}
 
         <Movies />
->>>>>>> 9fb063961ca39c54d2707b2711395dbd5a3b0258
       </div>
     );
   }
