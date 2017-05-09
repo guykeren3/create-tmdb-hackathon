@@ -1,7 +1,5 @@
-@import 'assets/styles/colors';
 
 .movies {
-
 
 .trailer {
   position: fixed;
@@ -22,4 +20,9 @@
     margin: 20px;
     list-style: none;
   }
+
+  .trailer {
+   width: 33.3%;
+  }
+
 }

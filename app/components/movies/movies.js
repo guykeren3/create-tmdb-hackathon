@@ -76,10 +76,9 @@ class Movies extends React.Component {
         <h2>Most Popular Movies</h2>
         { this.renderMoviesList() }
 
-        <ReactSlick/>
+        <ReactSlick />
 
-        <iframe src={url} className="trailer"
-        />
+        <iframe src={url} className="trailer"/>
       </div>
     );
   }
