@@ -58,28 +58,36 @@ class Movies extends React.Component {
   renderMoviesList() {
     return <ul className="list-of-movies">
       { this.props.movies.map((movie) => {
+        let backImg = {backgroundImage:`url(https://image.tmdb.org/t/p/w500${movie.poster_path})`};
         return <li key={ movie.id } className="movie-card"
-        onClick={()=>{this.getTrailer(movie.id)}}>
-          { movie.title }
 
-          <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={`poster of ${movie.title}`}/></li>
+                   onClick={() => {
+                     this.getTrailer(movie.id)
+                   }}
+                   style={backImg}>
+          <div >
+            { movie.title }
+            </div>
+
+
+        </li>
       }) }
     </ul>
   }
 
   handleBlur() {
-    this.setState({ytKey:''})
+    this.setState({ytKey: ''})
   }
 
   render() {
     const url = `https://www.youtube.com/embed/${this.state.ytKey}?rel=0&amp;controls=0&amp;showinfo=0?ecver=1`;
 
-    return (<div className="movies" onClick={()=>this.handleBlur()}>
+    return (<div className="movies" onClick={() => this.handleBlur()}>
         <Topbar />
 
-
-        { this.renderMoviesList() }
-
+        <div className="accordion">
+          { this.renderMoviesList() }
+        </div>
 
         { !!this.state.ytKey && <iframe src={url} className="trailer"
         /> }
